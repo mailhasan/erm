@@ -75,7 +75,7 @@ begin
             '  pemeriksaan_ranap.tensi, ' +
             '  pemeriksaan_ranap.tgl_perawatan, ' +
             '  pemeriksaan_ranap.tinggi, ' +
-            '  pemeriksaan_ranap.tinggi ' +
+            '  pegawai.nama ' +
             'FROM sikDrSalim1.pemeriksaan_ranap ' +
             'INNER JOIN sikDrSalim1.pegawai ' +
             '  ON pemeriksaan_ranap.nip = pegawai.nik';
@@ -105,20 +105,79 @@ begin
     '</style>' +
     '</head>' +
     '<body>' +
-    '<h2>Daftar Obat</h2>' +
+    '<h2>Riwayat Pemeriksaan </h2>' +
     '<table>' +
-    '<thead><tr><th>Nama</th><th>Harga</th><th>Stok</th></tr></thead>' +
+    '<thead><tr><th>Keterangan </th><th>:</th> <th>Isi Keterangan</th> </tr></thead>' +
     '<tbody>';
 
     DmKoneksi.ZQueryPemeriksaanRanap.First;
     while not DmKoneksi.ZQueryPemeriksaanRanap.EOF do
     begin
-      html := html + '<tr>' +
-        '<td data-label="Nama">' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('no_rawat').AsString + '</td>' +
-        '<td data-label="Harga">' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('tgl_perawatan').AsString + '</td>' +
-        '<td data-label="Stok">' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('jam_rawat').AsString + '</td>' +
-        '</tr>' +
-        '<tr><th>Nama</th><th>Harga</th><th>Stok</th></tr>';
+      html := html +
+        '<tr>'+
+          '<th>Tanggal / Jam</th>'+
+          '<th>: </th>'+
+          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('tgl_perawatan').AsString+'/'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('jam_rawat').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+          '<th>Pelaksana</th>'+
+          '<th>: </th>'+
+          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('nama').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+          '<th>Subjek</th>'+
+          '<th>: </th>'+
+          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('keluhan').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+          '<th>Objek</th>'+
+          '<th>: </th>'+
+          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('pemeriksaan').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+          '<th>Alergi</th>'+
+          '<th>: </th>'+
+          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('alergi').AsString+'</th>'+
+        '</tr>'+
+        '</tr>'+
+        '<tr>'+
+          '<th>Asesmen</th>'+
+          '<th>: </th>'+
+          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('penilaian').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+            '<th>Plan </th>'+
+            '<th>: </th>'+
+            '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('rtl').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+            '<th>Instruksi </th>'+
+            '<th>: </th>'+
+            '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('instruksi').AsString+'</th>'+
+        '</tr>'+
+        '<tr>'+
+            '<th>Instruksi </th>'+
+            '<th>: </th>'+
+            '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('instruksi').AsString+'</th>'+
+        '</tr>'+
+        '</tbody>' +
+        '</table>'+
+
+        '<table>' +
+        '<thead><tr><th>Suhu </th><th>Tensi</th> <th>Berat</th> <th>TB</th> <th>RR</th> <th>NADI</th> <th>SP02</th> <th>GCS</th> <th>GCS</th> <th>Kesadaran</th> </tr></thead>' +
+        '<tbody>'+
+        '<tr>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('suhu_tubuh').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('tensi').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
+        '</tr>';
       DmKoneksi.ZQueryPemeriksaanRanap.Next;
     end;
 

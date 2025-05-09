@@ -18,7 +18,7 @@ object DmKoneksi: TDmKoneksi
     User = 'admin'
     Password = '1FRQRmYwHqahlRsPgGdNL00g8qICXAQP8ZwFEu0fT3vlp1Xn5M'
     Protocol = 'mysql'
-    LibraryLocation = 'D:\erm\dll\libmysql-6.1.dll'
+    LibraryLocation = 'D:\erm\erm\dll\libmysql-6.1.dll'
     Left = 62
     Top = 31
   end
@@ -68,6 +68,7 @@ object DmKoneksi: TDmKoneksi
   end
   object ZQueryPemeriksaanRanap: TZQuery
     Connection = ZConnectionSik
+    Active = True
     SQL.Strings = (
       'SELECT'
       '    `pemeriksaan_ranap`.`alergi`'
@@ -90,11 +91,11 @@ object DmKoneksi: TDmKoneksi
       '    , `pemeriksaan_ranap`.`tensi`'
       '    , `pemeriksaan_ranap`.`tgl_perawatan`'
       '    , `pemeriksaan_ranap`.`tinggi`'
-      '    , `pemeriksaan_ranap`.`tinggi`'
+      '    , `pegawai`.`nama`'
       'FROM'
       '    `sikDrSalim1`.`pemeriksaan_ranap`'
       '    INNER JOIN `sikDrSalim1`.`pegawai` '
-      '        ON (`pemeriksaan_ranap`.`nip` = `pegawai`.`nik`);'
+      '        ON (`pemeriksaan_ranap`.`nip` = `pegawai`.`nik`)'
     )
     Params = <>
     Left = 70

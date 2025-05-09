@@ -18,7 +18,7 @@ object DmKoneksi: TDmKoneksi
     User = 'admin'
     Password = '1FRQRmYwHqahlRsPgGdNL00g8qICXAQP8ZwFEu0fT3vlp1Xn5M'
     Protocol = 'mysql'
-    LibraryLocation = 'D:\erm\ERM-Simrs-Khanza\dll\libmysql-6.1.dll'
+    LibraryLocation = 'D:\erm\erm\dll\libmysql-6.1.dll'
     Left = 62
     Top = 31
   end
@@ -68,7 +68,6 @@ object DmKoneksi: TDmKoneksi
   end
   object ZQueryPemeriksaanRanap: TZQuery
     Connection = ZConnectionSik
-    Active = True
     SQL.Strings = (
       'SELECT'
       '    `pemeriksaan_ranap`.`alergi`'
