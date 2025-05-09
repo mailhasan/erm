@@ -1,0 +1,130 @@
+object FormPemeriksaan: TFormPemeriksaan
+  Left = 329
+  Height = 722
+  Top = 162
+  Width = 1082
+  Caption = 'Form Pemeriksaan'
+  ClientHeight = 722
+  ClientWidth = 1082
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '3.6.0.0'
+  WindowState = wsFullScreen
+  object BCPaperPanel1: TBCPaperPanel
+    Left = 0
+    Height = 64
+    Top = 0
+    Width = 1082
+    Align = alTop
+    Alignment = taLeftJustify
+    Caption = 'BCPaperPanel1'
+    ClientHeight = 64
+    ClientWidth = 1082
+    Color = clWhite
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 15
+      Height = 20
+      Top = 24
+      Width = 65
+      Caption = 'No Rawat'
+    end
+    object EditNoRawat: TEdit
+      Left = 88
+      Height = 28
+      Top = 16
+      Width = 128
+      TabOrder = 0
+      Text = 'EditNoRawat'
+    end
+    object Label2: TLabel
+      Left = 224
+      Height = 20
+      Top = 24
+      Width = 46
+      Caption = 'No RM'
+    end
+    object EditNoRm: TEdit
+      Left = 280
+      Height = 28
+      Top = 16
+      Width = 144
+      TabOrder = 1
+      Text = 'EditNoRm'
+    end
+    object Label3: TLabel
+      Left = 424
+      Height = 20
+      Top = 24
+      Width = 40
+      Caption = 'Nama'
+    end
+    object EditNam: TEdit
+      Left = 472
+      Height = 28
+      Top = 16
+      Width = 248
+      TabOrder = 2
+      Text = 'EditNam'
+    end
+    object Label4: TLabel
+      Left = 728
+      Height = 20
+      Top = 24
+      Width = 106
+      Caption = 'Tgl Daftar / Jam'
+    end
+    object EditTgl: TEdit
+      Left = 840
+      Height = 28
+      Top = 16
+      Width = 96
+      TabOrder = 3
+      Text = 'EditTgl'
+    end
+    object EditJam: TEdit
+      Left = 944
+      Height = 28
+      Top = 16
+      Width = 96
+      TabOrder = 4
+      Text = 'EditJam'
+    end
+  end
+  object BCPaperPanel2: TBCPaperPanel
+    Left = 0
+    Height = 658
+    Top = 64
+    Width = 1082
+    Align = alClient
+    Alignment = taLeftJustify
+    Caption = 'BCPaperPanel2'
+    ClientHeight = 658
+    ClientWidth = 1082
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 1
+    object HtmlViewer1: THtmlViewer
+      Left = 0
+      Height = 658
+      Top = 0
+      Width = 1082
+      BorderStyle = htFocused
+      HistoryMaxCount = 0
+      NoSelect = False
+      PrintMarginBottom = 2
+      PrintMarginLeft = 2
+      PrintMarginRight = 2
+      PrintMarginTop = 2
+      PrintScale = 1
+      Align = alClient
+      TabOrder = 0
+    end
+  end
+end

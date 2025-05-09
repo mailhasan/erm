@@ -1,0 +1,451 @@
+object FormDaftarPasienRanap: TFormDaftarPasienRanap
+  Left = 256
+  Height = 691
+  Top = 145
+  Width = 1185
+  Caption = 'Form Daftar Pasien Ranap'
+  ClientHeight = 691
+  ClientWidth = 1185
+  OnShow = FormShow
+  LCLVersion = '3.6.0.0'
+  object BCPanelAtas: TBCPanel
+    Left = 0
+    Height = 50
+    Top = 32
+    Width = 1185
+    Align = alTop
+    Background.Color = clBtnFace
+    Background.Gradient1.StartColor = clWhite
+    Background.Gradient1.EndColor = clBlack
+    Background.Gradient1.GradientType = gtLinear
+    Background.Gradient1.Point1XPercent = 0
+    Background.Gradient1.Point1YPercent = 0
+    Background.Gradient1.Point2XPercent = 0
+    Background.Gradient1.Point2YPercent = 100
+    Background.Gradient2.StartColor = clWhite
+    Background.Gradient2.EndColor = clBlack
+    Background.Gradient2.GradientType = gtLinear
+    Background.Gradient2.Point1XPercent = 0
+    Background.Gradient2.Point1YPercent = 0
+    Background.Gradient2.Point2XPercent = 0
+    Background.Gradient2.Point2YPercent = 100
+    Background.Gradient1EndPercent = 35
+    Background.Style = bbsColor
+    BevelInner = bvNone
+    BevelOuter = bvRaised
+    BevelWidth = 1
+    Border.Style = bboNone
+    FontEx.Color = clDefault
+    FontEx.FontQuality = fqSystemClearType
+    FontEx.Shadow = False
+    FontEx.ShadowRadius = 5
+    FontEx.ShadowOffsetX = 5
+    FontEx.ShadowOffsetY = 5
+    FontEx.Style = []
+    ParentBackground = False
+    Rounding.RoundX = 1
+    Rounding.RoundY = 1
+    TabOrder = 0
+    object BCMaterialEditCari: TBCMaterialEdit
+      Left = 1
+      Height = 48
+      Top = 1
+      Width = 255
+      Align = alLeft
+      AccentColor = clHighlight
+      Caption = 'Pencarian'
+      Color = clWindow
+      DisabledColor = 12103592
+      DoubleBuffered = True
+      EditLabel.Height = 15
+      EditLabel.Width = 245
+      EditLabel.Caption = 'Pencarian'
+      EditLabel.ParentFont = False
+      EditLabel.Font.Color = 12103592
+      EditLabel.Font.Style = [fsBold]
+      ParentFont = True
+      TabOrder = 0
+      Text = 'BCMaterialEdit1'
+      OnClick = BCMaterialEditCariClick
+      OnKeyPress = BCMaterialEditCariKeyPress
+      Edit.Left = 5
+      Edit.Height = 19
+      Edit.Top = 24
+      Edit.Width = 245
+      Edit.Align = alClient
+      Edit.BorderSpacing.Left = 4
+      Edit.BorderSpacing.Right = 4
+      Edit.BorderSpacing.Bottom = 4
+      Edit.BorderStyle = bsNone
+      Edit.Color = clWindow
+      Edit.DoubleBuffered = True
+      Edit.ParentDoubleBuffered = False
+      Edit.TabOrder = 0
+      Edit.Text = 'BCMaterialEdit1'
+      Edit.OnClick = BCMaterialEditCariClick
+      Edit.OnKeyPress = BCMaterialEditCariKeyPress
+    end
+    object BGRAThemeButtonKeluar: TBGRAThemeButton
+      Left = 1120
+      Height = 48
+      Top = 1
+      Width = 64
+      Theme = FormUtama.BGRAImageThemeBtnKeluar
+      Align = alRight
+      Caption = 'Keluar'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ImageIndex = 0
+      OnClick = BGRAThemeButtonKeluarClick
+    end
+    object BCButtonTampilData: TBCButton
+      Left = 256
+      Height = 48
+      Top = 1
+      Width = 80
+      Align = alLeft
+      StateClicked.Background.Gradient1.StartColor = 8404992
+      StateClicked.Background.Gradient1.EndColor = 4194304
+      StateClicked.Background.Gradient1.GradientType = gtRadial
+      StateClicked.Background.Gradient1.Point1XPercent = 50
+      StateClicked.Background.Gradient1.Point1YPercent = 100
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 0
+      StateClicked.Background.Gradient2.StartColor = clWhite
+      StateClicked.Background.Gradient2.EndColor = clBlack
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 100
+      StateClicked.Background.Style = bbsGradient
+      StateClicked.Border.Style = bboNone
+      StateClicked.FontEx.Color = 16770790
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = True
+      StateClicked.FontEx.ShadowRadius = 2
+      StateClicked.FontEx.ShadowOffsetX = 1
+      StateClicked.FontEx.ShadowOffsetY = 1
+      StateClicked.FontEx.Style = [fsBold]
+      StateHover.Background.Gradient1.StartColor = 16744448
+      StateHover.Background.Gradient1.EndColor = 8404992
+      StateHover.Background.Gradient1.GradientType = gtRadial
+      StateHover.Background.Gradient1.Point1XPercent = 50
+      StateHover.Background.Gradient1.Point1YPercent = 100
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 0
+      StateHover.Background.Gradient2.StartColor = clWhite
+      StateHover.Background.Gradient2.EndColor = clBlack
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 100
+      StateHover.Background.Style = bbsGradient
+      StateHover.Border.Style = bboNone
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = True
+      StateHover.FontEx.ShadowRadius = 2
+      StateHover.FontEx.ShadowOffsetX = 1
+      StateHover.FontEx.ShadowOffsetY = 1
+      StateHover.FontEx.Style = [fsBold]
+      StateNormal.Background.Gradient1.StartColor = 4194304
+      StateNormal.Background.Gradient1.EndColor = 8405056
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 8405056
+      StateNormal.Background.Gradient2.EndColor = 4194304
+      StateNormal.Background.Gradient2.GradientType = gtRadial
+      StateNormal.Background.Gradient2.Point1XPercent = 50
+      StateNormal.Background.Gradient2.Point1YPercent = 100
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 0
+      StateNormal.Background.Gradient1EndPercent = 60
+      StateNormal.Background.Style = bbsGradient
+      StateNormal.Border.Style = bboNone
+      StateNormal.FontEx.Color = 16770790
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Shadow = True
+      StateNormal.FontEx.ShadowRadius = 2
+      StateNormal.FontEx.ShadowOffsetX = 1
+      StateNormal.FontEx.ShadowOffsetY = 1
+      StateNormal.FontEx.Style = [fsBold]
+      Caption = 'Tampil'
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      OnClick = BCButtonTampilDataClick
+      ParentColor = False
+      Rounding.RoundX = 12
+      Rounding.RoundY = 12
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      MemoryUsage = bmuHigh
+    end
+    object BCButtonPemeriksaan: TBCButton
+      Left = 336
+      Height = 48
+      Top = 1
+      Width = 91
+      Align = alLeft
+      StateClicked.Background.Gradient1.StartColor = 8404992
+      StateClicked.Background.Gradient1.EndColor = 4194304
+      StateClicked.Background.Gradient1.GradientType = gtRadial
+      StateClicked.Background.Gradient1.Point1XPercent = 50
+      StateClicked.Background.Gradient1.Point1YPercent = 100
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 0
+      StateClicked.Background.Gradient2.StartColor = clWhite
+      StateClicked.Background.Gradient2.EndColor = clBlack
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 100
+      StateClicked.Background.Style = bbsGradient
+      StateClicked.Border.Style = bboNone
+      StateClicked.FontEx.Color = 16770790
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = True
+      StateClicked.FontEx.ShadowRadius = 2
+      StateClicked.FontEx.ShadowOffsetX = 1
+      StateClicked.FontEx.ShadowOffsetY = 1
+      StateClicked.FontEx.Style = [fsBold]
+      StateHover.Background.Gradient1.StartColor = 16744448
+      StateHover.Background.Gradient1.EndColor = 8404992
+      StateHover.Background.Gradient1.GradientType = gtRadial
+      StateHover.Background.Gradient1.Point1XPercent = 50
+      StateHover.Background.Gradient1.Point1YPercent = 100
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 0
+      StateHover.Background.Gradient2.StartColor = clWhite
+      StateHover.Background.Gradient2.EndColor = clBlack
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 100
+      StateHover.Background.Style = bbsGradient
+      StateHover.Border.Style = bboNone
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = True
+      StateHover.FontEx.ShadowRadius = 2
+      StateHover.FontEx.ShadowOffsetX = 1
+      StateHover.FontEx.ShadowOffsetY = 1
+      StateHover.FontEx.Style = [fsBold]
+      StateNormal.Background.Gradient1.StartColor = 4194304
+      StateNormal.Background.Gradient1.EndColor = 8405056
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 8405056
+      StateNormal.Background.Gradient2.EndColor = 4194304
+      StateNormal.Background.Gradient2.GradientType = gtRadial
+      StateNormal.Background.Gradient2.Point1XPercent = 50
+      StateNormal.Background.Gradient2.Point1YPercent = 100
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 0
+      StateNormal.Background.Gradient1EndPercent = 60
+      StateNormal.Background.Style = bbsGradient
+      StateNormal.Border.Style = bboNone
+      StateNormal.FontEx.Color = 16770790
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Shadow = True
+      StateNormal.FontEx.ShadowRadius = 2
+      StateNormal.FontEx.ShadowOffsetX = 1
+      StateNormal.FontEx.ShadowOffsetY = 1
+      StateNormal.FontEx.Style = [fsBold]
+      Caption = 'RAWAT INAP'
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      OnClick = BCButtonPemeriksaanClick
+      ParentColor = False
+      Rounding.RoundX = 12
+      Rounding.RoundY = 12
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      MemoryUsage = bmuHigh
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 609
+    Top = 82
+    Width = 1185
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'No Rawat'
+        FieldName = 'no_rawat'
+      end    
+      item
+        Title.Caption = 'No RM'
+        Width = 80
+        FieldName = 'no_rkm_medis'
+      end    
+      item
+        Title.Caption = 'NAMA PASIEN'
+        Width = 250
+        FieldName = 'nm_pasien'
+      end    
+      item
+        Title.Caption = 'Alamat'
+        Width = 200
+        FieldName = 'alamat'
+      end    
+      item
+        Title.Caption = 'P Jawab'
+        Width = 120
+        FieldName = 'p_jawab'
+      end    
+      item
+        Title.Caption = 'Hubungan Pj'
+        Width = 100
+        FieldName = 'hubunganpj'
+      end    
+      item
+        Title.Caption = 'Cara Bayar'
+        Width = 100
+        FieldName = 'png_jawab'
+      end    
+      item
+        Title.Caption = 'Kd Kamar'
+        Width = 100
+        FieldName = 'kd_kamar'
+      end    
+      item
+        Title.Caption = 'Tarif'
+        FieldName = 'trf_kamar'
+      end    
+      item
+        Title.Caption = 'Diagnosa Awal'
+        Width = 150
+        FieldName = 'diagnosa_awal'
+      end    
+      item
+        Title.Caption = 'Diagnosa Akhir'
+        Width = 100
+        FieldName = 'diagnosa_akhir'
+      end    
+      item
+        Title.Caption = 'Tgl Masuk'
+        FieldName = 'tgl_masuk'
+      end    
+      item
+        Title.Caption = 'Jam Masuk'
+        FieldName = 'jam_masuk'
+      end    
+      item
+        Title.Caption = 'Tgl Keluar'
+        FieldName = 'tgl_keluar'
+      end    
+      item
+        Title.Caption = 'Jam Keluar'
+        FieldName = 'jam_keluar'
+      end    
+      item
+        Title.Caption = 'Ttl Biaya'
+        FieldName = 'ttl_biaya'
+      end    
+      item
+        Title.Caption = 'Status Pulang'
+        Width = 120
+        FieldName = 'stts_pulang'
+      end    
+      item
+        Title.Caption = 'Lama'
+        FieldName = 'lama'
+      end    
+      item
+        Title.Caption = 'Dokter'
+        Width = 150
+        FieldName = 'nm_dokter'
+      end    
+      item
+        Title.Caption = 'Status Bayar'
+        FieldName = 'status_bayar'
+      end    
+      item
+        Title.Caption = 'Agama'
+        FieldName = 'agama'
+      end>
+    DataSource = DmKoneksi.DataSourceTampilPasienRanap
+    DefaultRowHeight = 30
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = -16
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+  end
+  object BCPaperPanelTengahAtas: TBCPaperPanel
+    Left = 0
+    Height = 32
+    Top = 0
+    Width = 1185
+    Align = alTop
+    Alignment = taLeftJustify
+    Caption = 'BCPaperPanelTengahAtas'
+    ClientHeight = 32
+    ClientWidth = 1185
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 2
+    object BCLabelInformasi: TBCLabel
+      Left = 0
+      Height = 32
+      Top = 0
+      Width = 93
+      Align = alLeft
+      Background.Gradient1.StartColor = clWhite
+      Background.Gradient1.EndColor = clBlack
+      Background.Gradient1.GradientType = gtLinear
+      Background.Gradient1.Point1XPercent = 0
+      Background.Gradient1.Point1YPercent = 0
+      Background.Gradient1.Point2XPercent = 0
+      Background.Gradient1.Point2YPercent = 100
+      Background.Gradient2.StartColor = clWhite
+      Background.Gradient2.EndColor = clBlack
+      Background.Gradient2.GradientType = gtLinear
+      Background.Gradient2.Point1XPercent = 0
+      Background.Gradient2.Point1YPercent = 0
+      Background.Gradient2.Point2XPercent = 0
+      Background.Gradient2.Point2YPercent = 100
+      Background.Gradient1EndPercent = 35
+      Background.Style = bbsClear
+      Border.Style = bboNone
+      Caption = 'BCLabelInformasi'
+      FontEx.Color = clDefault
+      FontEx.FontQuality = fqSystemClearType
+      FontEx.Shadow = False
+      FontEx.ShadowRadius = 5
+      FontEx.ShadowOffsetX = 5
+      FontEx.ShadowOffsetY = 5
+      FontEx.Style = []
+      Rounding.RoundX = 1
+      Rounding.RoundY = 1
+    end
+  end
+end

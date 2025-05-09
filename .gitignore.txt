@@ -1,0 +1,36 @@
+# File executable
+*.exe
+*.dll
+*.so
+*.dylib
+
+# File debug dan kompilasi
+*.o
+*.ppu
+*.a
+*.pdb
+*.bak
+*.dcu
+*.~*
+
+# File konfigurasi Lazarus dan Delphi
+lib/
+backup/
+*.cfg
+*.dsk
+*.local
+*.identcache
+*.tvsconfig
+
+# Folder build/output
+build/
+bin/
+output/
+dist/
+
+# File log
+*.log
+
+# Sistem operasi
+.DS_Store
+Thumbs.db
