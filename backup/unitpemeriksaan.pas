@@ -5,27 +5,37 @@ unit unitPemeriksaan;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  DateTimePicker, BCExpandPanels, BCPanel, BCListBox, FramView, HtmlView;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
+  ExtCtrls, DBGrids, DateTimePicker, BCExpandPanels, BCPanel, BCListBox,
+  BCButton, ColorSpeedButton, BCButtonFocus, BCMaterialDesignButton, BCMDButton,
+  FramView, HtmlView;
 
 type
 
   { TFormPemeriksaan }
 
   TFormPemeriksaan = class(TForm)
+    BCPanel1: TBCPanel;
     BCPaperPanel1: TBCPaperPanel;
     BCPaperPanel2: TBCPaperPanel;
+    BCPaperPanel3: TBCPaperPanel;
     EditTgl: TEdit;
     EditNoRawat: TEdit;
     EditNoRm: TEdit;
     EditNam: TEdit;
     EditJam: TEdit;
-    HtmlViewer1: THtmlViewer;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    procedure BCExpandPanels1ArrangePanels(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
   private
 
   public
@@ -44,7 +54,22 @@ uses unitDm;
 
 procedure TFormPemeriksaan.FormShow(Sender: TObject);
 begin
-  tampilDataPemriksaan; tampilHtmlView;
+  //tampilDataPemriksaan; tampilHtmlView;
+end;
+
+procedure TFormPemeriksaan.PageControl1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TFormPemeriksaan.Panel1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TFormPemeriksaan.BCExpandPanels1ArrangePanels(Sender: TObject);
+begin
+
 end;
 
 procedure TFormPemeriksaan.tampilDataPemriksaan;
@@ -76,9 +101,10 @@ begin
             '  pemeriksaan_ranap.tgl_perawatan, ' +
             '  pemeriksaan_ranap.tinggi, ' +
             '  pegawai.nama ' +
-            'FROM sikDrSalim1.pemeriksaan_ranap ' +
-            'INNER JOIN sikDrSalim1.pegawai ' +
-            '  ON pemeriksaan_ranap.nip = pegawai.nik';
+            'FROM pemeriksaan_ranap ' +
+            'INNER JOIN pegawai ' +
+            '  ON pemeriksaan_ranap.nip = pegawai.nik where pemeriksaan_ranap.no_rawat=:no_rawat order by tgl_perawatan,jam_rawat asc';
+  ParamByName('no_rawat').AsString := EditNoRawat.Text;
   Open;
  end;
 end;
@@ -87,126 +113,68 @@ end;
 
 procedure TFormPemeriksaan.tampilHtmlView;
 var
- html: string;
+  HTMLText: string;
+  No: Integer;
 begin
- html :=
-    '<html>' +
-    '<head>' +
-    '<style>' +
-    'table { width: 100%; border-collapse: collapse; }' +
-    'th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }' +
-    'th { background-color: #f2f2f2; }' +
-    '@media screen and (max-width: 600px) {' +
-    '  table, thead, tbody, th, td, tr { display: block; }' +
-    '  tr { margin-bottom: 15px; }' +
-    '  td { border: none; position: relative; padding-left: 50%; }' +
-    '  td:before { content: attr(data-label); position: absolute; left: 10px; top: 8px; font-weight: bold; }' +
-    '}' +
-    '</style>' +
-    '</head>' +
-    '<body>' +
-    '<h2>Riwayat Pemeriksaan </h2>' +
-    '<table>' +
-    '<thead><tr><th>Keterangan </th><th>:</th> <th>Isi Keterangan</th> </tr></thead>' +
-    '<tbody>';
+  HTMLText := '<html><head><style>' +
+              'body {font-family: Arial; font-size: 14px;}' +
+              '.section {margin-bottom: 20px;}' +
+              'table {width: 100%; border-collapse: collapse; margin-top: 10px;}' +
+              'td, th {border: 1px solid #ccc; padding: 6px; text-align: left;}' +
+              'th {background-color: #f0f0f0;}' +
+              '</style></head><body>';
+  HTMLText:= HTMLText + '<h4> Riwayat Keperawatan </h4>';
+  No := 1;
 
-    DmKoneksi.ZQueryPemeriksaanRanap.First;
-    while not DmKoneksi.ZQueryPemeriksaanRanap.EOF do
+  with DmKoneksi.ZQueryPemeriksaanRanap do
+  begin
+    First;
+    while not EOF do
     begin
-      html := html +
-        '<tr>'+
-          '<th>Tanggal / Jam</th>'+
-          '<th>: </th>'+
-          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('tgl_perawatan').AsString+'/'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('jam_rawat').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-          '<th>Pelaksana</th>'+
-          '<th>: </th>'+
-          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('nama').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-          '<th>Subjek</th>'+
-          '<th>: </th>'+
-          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('keluhan').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-          '<th>Objek</th>'+
-          '<th>: </th>'+
-          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('pemeriksaan').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-          '<th>Alergi</th>'+
-          '<th>: </th>'+
-          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('alergi').AsString+'</th>'+
-        '</tr>'+
-        '</tr>'+
-        '<tr>'+
-          '<th>Asesmen</th>'+
-          '<th>: </th>'+
-          '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('penilaian').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-            '<th>Plan </th>'+
-            '<th>: </th>'+
-            '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('rtl').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-            '<th>Instruksi </th>'+
-            '<th>: </th>'+
-            '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('instruksi').AsString+'</th>'+
-        '</tr>'+
-        '<tr>'+
-            '<th>Instruksi </th>'+
-            '<th>: </th>'+
-            '<th>'+DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('instruksi').AsString+'</th>'+
-        '</tr>'+
-        '</tbody>' +
-        '</table>'+
-
+      // Bagian informasi utama (Tabel ke bawah)
+      HTMLText := HTMLText + '<div class="section">' +
+        '<h3>Data Pemeriksaan #' + IntToStr(No) + '</h3>' +
         '<table>' +
-        '<thead><tr><th>Suhu </th><th>Tensi</th> <th>Berat</th> <th>TB</th> <th>RR</th> <th>NADI</th> <th>SP02</th> <th>GCS</th> <th>GCS</th> <th>Kesadaran</th> </tr></thead>' +
-        '<tbody>'+
-        '<tr>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('suhu_tubuh').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('tensi').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-            '<td>' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('berat').AsString + '</td>'+
-        '</tr>';
-      DmKoneksi.ZQueryPemeriksaanRanap.Next;
+        '<tr><th>No : ' + IntToStr(No) + ' Tanggal : '+ FieldByName('tgl_perawatan').AsString + ' Jam : '+ FieldByName('jam_rawat').AsString + ' </th> </tr> '+
+        '<tr><th>No. Rawat</th></tr><tr><td>' + FieldByName('no_rawat').AsString + '</td></tr>' +
+        '<tr><th>Nama Pegawai</th></tr><tr><td>' + FieldByName('nama').AsString + '</td></tr>' +
+        '<tr><th>Keluhan</th></tr><tr><td>' + FieldByName('keluhan').AsString + '</td></tr>' +
+        '<tr><th>Pemeriksaan</th></tr><tr><td>' + FieldByName('pemeriksaan').AsString + '</td></tr>' +
+        '<tr><th>Penilaian</th></tr><tr><td>' + FieldByName('penilaian').AsString + '</td></tr>' +
+        '<tr><th>Instruksi</th></tr><tr><td>' + FieldByName('instruksi').AsString + '</td></tr>' +
+        '<tr><th>Evaluasi</th></tr><tr><td>' + FieldByName('evaluasi').AsString + '</td></tr>' +
+        '<tr><th>RTL</th></tr><tr><td>' + FieldByName('rtl').AsString + '</td></tr>' +
+        '</table>';
+
+      // Bagian pemeriksaan fisik (Tabel ke samping)
+      HTMLText := HTMLText +
+        '<h4>Pemeriksaan Fisik</h4>' +
+        '<table>' +
+        '<tr>' +
+        '<th>Tensi</th><th>Nadi</th><th>Respirasi</th><th>Suhu</th>' +
+        '<th>SPO2</th><th>GCS</th><th>Kesadaran</th>' +
+        '<th>Berat</th><th>Tinggi</th><th>Alergi</th>' +
+        '</tr><tr>' +
+        '<td>' + FieldByName('tensi').AsString + '</td>' +
+        '<td>' + FieldByName('nadi').AsString + '</td>' +
+        '<td>' + FieldByName('respirasi').AsString + '</td>' +
+        '<td>' + FieldByName('suhu_tubuh').AsString + '</td>' +
+        '<td>' + FieldByName('spo2').AsString + '</td>' +
+        '<td>' + FieldByName('gcs').AsString + '</td>' +
+        '<td>' + FieldByName('kesadaran').AsString + '</td>' +
+        '<td>' + FieldByName('berat').AsString + '</td>' +
+        '<td>' + FieldByName('tinggi').AsString + '</td>' +
+        '<td>' + FieldByName('alergi').AsString + '</td>' +
+        '</tr></table></div><hr>';
+
+      Inc(No);
+      Next;
     end;
+  end;
 
-    html := html +
-      '</tbody>' +
-      '</table>' +
+  HTMLText := HTMLText + '</table></body></html>';
 
-     '<h2>Daftar Obat</h2>' +
-      '<table>' +
-      '<thead><tr><th>Nama</th><th>Harga</th><th>Stok</th></tr></thead>' +
-      '<tbody>';
-
-    DmKoneksi.ZQueryPemeriksaanRanap.First;
-    while not DmKoneksi.ZQueryPemeriksaanRanap.EOF do
-    begin
-      html := html + '<tr>' +
-        '<td data-label="Nama">' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('no_rawat').AsString + '</td>' +
-        '<td data-label="Harga">' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('tgl_perawatan').AsString + '</td>' +
-        '<td data-label="Stok">' + DmKoneksi.ZQueryPemeriksaanRanap.FieldByName('jam_rawat').AsString + '</td>' +
-        '</tr>';
-      DmKoneksi.ZQueryPemeriksaanRanap.Next;
-    end;
-
-    html := html +
-      '</tbody>' +
-      '</table>' +
-
-
-    '</body></html>';
- HTMLViewer1.LoadFromString(html);
+  //HTMLViewer1.LoadFromString(HTMLText);
 end;
 
 end.

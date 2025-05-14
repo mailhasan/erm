@@ -12,11 +12,10 @@ object DmKoneksi: TDmKoneksi
     Connected = True
     AfterConnect = ZConnectionSikAfterConnect
     DisableSavepoints = False
-    HostName = '192.168.29.12'
+    HostName = '192.168.30.24'
     Port = 3306
-    Database = 'sikDrSalim1'
-    User = 'admin'
-    Password = '1FRQRmYwHqahlRsPgGdNL00g8qICXAQP8ZwFEu0fT3vlp1Xn5M'
+    Database = 'sik'
+    User = 'root'
     Protocol = 'mysql'
     LibraryLocation = 'D:\erm\erm\dll\libmysql-6.1.dll'
     Left = 62
@@ -93,8 +92,8 @@ object DmKoneksi: TDmKoneksi
       '    , `pemeriksaan_ranap`.`tinggi`'
       '    , `pegawai`.`nama`'
       'FROM'
-      '    `sikDrSalim1`.`pemeriksaan_ranap`'
-      '    INNER JOIN `sikDrSalim1`.`pegawai` '
+      '   `pemeriksaan_ranap`'
+      '    INNER JOIN `pegawai` '
       '        ON (`pemeriksaan_ranap`.`nip` = `pegawai`.`nik`)'
     )
     Params = <>

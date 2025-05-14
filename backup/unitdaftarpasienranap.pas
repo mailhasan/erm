@@ -157,7 +157,7 @@ begin
     EditNoRawat.Text:= noRawat;
     EditNoRm.Text:= noRM;
     EditTgl.Text:= tglDaftar;
-    EditJam.Text:= tglDaftar;
+    EditJam.Text:= jamDaftar;
     ShowModal;
    end;
 end;
