@@ -8,9 +8,10 @@
       <Unit>
         <Filename Value="ERMDokter.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="63" Y="25"/>
-        <UsageCount Value="79"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="51" Y="24"/>
+        <UsageCount Value="93"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="unitutama.pas"/>
@@ -19,9 +20,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitUtama"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="20"/>
-        <CursorPos X="8" Y="41"/>
-        <UsageCount Value="79"/>
+        <CursorPos X="164" Y="43"/>
+        <UsageCount Value="93"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,10 +34,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="unitDm"/>
-        <EditorIndex Value="2"/>
         <TopLine Value="9"/>
-        <CursorPos X="81" Y="35"/>
-        <UsageCount Value="79"/>
+        <CursorPos X="81" Y="36"/>
+        <UsageCount Value="93"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -46,10 +47,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitDaftarPasienRanap"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="137"/>
-        <CursorPos X="43" Y="154"/>
-        <UsageCount Value="75"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="42"/>
+        <CursorPos X="8" Y="163"/>
+        <UsageCount Value="89"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -60,11 +61,25 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPemeriksaan"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="130"/>
+        <CursorPos X="34" Y="148"/>
+        <UsageCount Value="79"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FromTambahPemeriksaan"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitTambahPemeriksaan"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="40"/>
-        <CursorPos X="105" Y="59"/>
-        <UsageCount Value="65"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="22"/>
+        <CursorPos X="17" Y="55"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -73,142 +88,86 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="30" Y="91"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\components\zeosdbo-7.2.4-stable\src\plain\ZPlainDriver.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="54"/>
         <CursorPos X="20" Y="71"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="unitdm.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="15">
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="57" Column="3" TopLine="35"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Column="27"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="58" Column="3" TopLine="36"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="24" Column="17"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="59" Column="3" TopLine="37"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="36" Column="17" TopLine="2"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="60" Column="3" TopLine="38"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="42" Column="17" TopLine="8"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="59" Column="3" TopLine="37"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="48" Column="17" TopLine="14"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="58" Column="3" TopLine="36"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="47" Column="17" TopLine="14"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="57" Column="3" TopLine="35"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="55" Column="17" TopLine="22"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="56" Column="3" TopLine="34"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="54" Column="17" TopLine="21"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="57" Column="3" TopLine="35"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="53" Column="17" TopLine="21"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="56" Column="3" TopLine="34"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="52" Column="17" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="57" Column="3" TopLine="35"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="51" Column="17" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="58" Column="3" TopLine="36"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="50" Column="17" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="59" Column="3" TopLine="37"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="49" Column="17" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="58" Column="148" TopLine="38"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="48" Column="17" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="57" Column="148" TopLine="37"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="47" Column="17" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="56" Column="148" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="57" Column="148" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="58" Column="148" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="59" Column="148" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="58" Column="148" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="64" Column="148" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="67" Column="3" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="62" Column="3" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="61" Column="3" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="60" Column="3" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="61" Column="3" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="62" Column="3" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="61" Column="3" TopLine="39"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="62" Column="3" TopLine="40"/>
-      </Position>
-      <Position>
-        <Filename Value="unitpemeriksaan.pas"/>
-        <Caret Line="61" Column="3" TopLine="39"/>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <Caret Line="49" Column="17" TopLine="20"/>
       </Position>
     </JumpHistory>
     <RunParams>

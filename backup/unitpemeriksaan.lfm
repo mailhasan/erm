@@ -1,11 +1,11 @@
 object FormPemeriksaan: TFormPemeriksaan
-  Left = 329
-  Height = 722
-  Top = 162
-  Width = 1082
+  Left = 333
+  Height = 720
+  Top = 96
+  Width = 1200
   Caption = 'Form Pemeriksaan'
-  ClientHeight = 722
-  ClientWidth = 1082
+  ClientHeight = 720
+  ClientWidth = 1200
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '3.6.0.0'
@@ -14,12 +14,12 @@ object FormPemeriksaan: TFormPemeriksaan
     Left = 0
     Height = 112
     Top = 0
-    Width = 1082
+    Width = 1200
     Align = alTop
     Alignment = taLeftJustify
     Caption = 'BCPaperPanel1'
     ClientHeight = 112
-    ClientWidth = 1082
+    ClientWidth = 1200
     Color = clWhite
     Font.CharSet = ANSI_CHARSET
     Font.Height = -15
@@ -40,6 +40,7 @@ object FormPemeriksaan: TFormPemeriksaan
       Height = 28
       Top = 16
       Width = 208
+      Enabled = False
       TabOrder = 0
       Text = 'EditNoRawat'
     end
@@ -55,6 +56,7 @@ object FormPemeriksaan: TFormPemeriksaan
       Height = 28
       Top = 56
       Width = 208
+      Enabled = False
       TabOrder = 1
       Text = 'EditNoRm'
     end
@@ -70,6 +72,7 @@ object FormPemeriksaan: TFormPemeriksaan
       Height = 28
       Top = 56
       Width = 520
+      Enabled = False
       TabOrder = 2
       Text = 'EditNam'
     end
@@ -85,6 +88,7 @@ object FormPemeriksaan: TFormPemeriksaan
       Height = 28
       Top = 16
       Width = 192
+      Enabled = False
       TabOrder = 3
       Text = 'EditTgl'
     end
@@ -93,28 +97,29 @@ object FormPemeriksaan: TFormPemeriksaan
       Height = 28
       Top = 16
       Width = 96
+      Enabled = False
       TabOrder = 4
       Text = 'EditJam'
     end
   end
   object BCPaperPanel2: TBCPaperPanel
     Left = 0
-    Height = 610
+    Height = 608
     Top = 112
-    Width = 1082
+    Width = 1200
     Align = alClient
     Alignment = taLeftJustify
     Caption = 'BCPaperPanel2'
-    ClientHeight = 610
-    ClientWidth = 1082
+    ClientHeight = 608
+    ClientWidth = 1200
     Color = clWhite
     ParentColor = False
     TabOrder = 1
     object PageControl1: TPageControl
       Left = 0
-      Height = 610
+      Height = 608
       Top = 0
-      Width = 1082
+      Width = 1200
       ActivePage = TabSheet1
       Align = alClient
       Font.CharSet = ANSI_CHARSET
@@ -127,30 +132,354 @@ object FormPemeriksaan: TFormPemeriksaan
       OnChange = PageControl1Change
       object TabSheet1: TTabSheet
         Caption = 'PEMERIKSAAN'
-        ClientHeight = 576
-        ClientWidth = 1074
+        ClientHeight = 574
+        ClientWidth = 1192
         Font.CharSet = ANSI_CHARSET
         Font.Height = -16
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentFont = False
-        object BCPaperPanel3: TBCPaperPanel
+        object BCPanelPemeriksaanKanan: TBCPanel
           Left = 0
-          Height = 576
+          Height = 574
           Top = 0
-          Width = 498
+          Width = 696
           Align = alLeft
-          Alignment = taLeftJustify
-          Caption = 'BCPaperPanel3'
-          Color = clWhite
-          ParentColor = False
+          Background.Color = clBtnFace
+          Background.Gradient1.StartColor = clWhite
+          Background.Gradient1.EndColor = clBlack
+          Background.Gradient1.GradientType = gtLinear
+          Background.Gradient1.Point1XPercent = 0
+          Background.Gradient1.Point1YPercent = 0
+          Background.Gradient1.Point2XPercent = 0
+          Background.Gradient1.Point2YPercent = 100
+          Background.Gradient2.StartColor = clWhite
+          Background.Gradient2.EndColor = clBlack
+          Background.Gradient2.GradientType = gtLinear
+          Background.Gradient2.Point1XPercent = 0
+          Background.Gradient2.Point1YPercent = 0
+          Background.Gradient2.Point2XPercent = 0
+          Background.Gradient2.Point2YPercent = 100
+          Background.Gradient1EndPercent = 35
+          Background.Style = bbsColor
+          BevelInner = bvNone
+          BevelOuter = bvRaised
+          BevelWidth = 1
+          Border.Style = bboNone
+          FontEx.Color = clDefault
+          FontEx.FontQuality = fqSystemClearType
+          FontEx.Shadow = False
+          FontEx.ShadowRadius = 5
+          FontEx.ShadowOffsetX = 5
+          FontEx.ShadowOffsetY = 5
+          FontEx.Style = []
+          ParentBackground = False
+          Rounding.RoundX = 1
+          Rounding.RoundY = 1
           TabOrder = 0
+          object Label5: TLabel
+            Left = 8
+            Height = 21
+            Top = 22
+            Width = 77
+            Caption = 'Pelaksanan'
+          end
+          object EditPelaksana: TEdit
+            Left = 88
+            Height = 29
+            Top = 14
+            Width = 401
+            TabOrder = 0
+            Text = 'EditPelaksana'
+          end
+          object Label6: TLabel
+            Left = 9
+            Height = 21
+            Top = 56
+            Width = 61
+            Caption = 'Tgl / Jam'
+          end
+          object EditTglPemriksaan: TEdit
+            Left = 88
+            Height = 29
+            Top = 48
+            Width = 263
+            TabOrder = 1
+            Text = 'EditTglPemriksaan'
+          end
+          object EditJamPemriksaan: TEdit
+            Left = 360
+            Height = 29
+            Top = 48
+            Width = 128
+            TabOrder = 2
+            Text = 'EditJamPemriksaan'
+          end
+          object Label7: TLabel
+            Left = 9
+            Height = 21
+            Top = 96
+            Width = 47
+            Caption = 'Subjek'
+          end
+          object MemoSubjek: TMemo
+            Left = 88
+            Height = 56
+            Top = 80
+            Width = 401
+            Lines.Strings = (
+              'MemoSubjek'
+            )
+            ScrollBars = ssAutoBoth
+            TabOrder = 3
+          end
+          object Label8: TLabel
+            Left = 9
+            Height = 21
+            Top = 160
+            Width = 41
+            Caption = 'Objek'
+          end
+          object MemoObjek: TMemo
+            Left = 88
+            Height = 90
+            Top = 144
+            Width = 401
+            Lines.Strings = (
+              'Memo1'
+            )
+            ScrollBars = ssAutoBoth
+            TabOrder = 4
+          end
+          object Label9: TLabel
+            Left = 8
+            Height = 21
+            Top = 272
+            Width = 56
+            Caption = 'Asemen'
+          end
+          object MemoAsesmen: TMemo
+            Left = 88
+            Height = 75
+            Top = 240
+            Width = 401
+            Lines.Strings = (
+              'Memo1'
+            )
+            ScrollBars = ssAutoBoth
+            TabOrder = 5
+          end
+          object Label10: TLabel
+            Left = 496
+            Height = 21
+            Top = 416
+            Width = 41
+            Caption = 'Alergi'
+          end
+          object EditAlergi: TEdit
+            Left = 498
+            Height = 29
+            Top = 448
+            Width = 186
+            TabOrder = 6
+            Text = 'EditAlergi'
+          end
+          object Label11: TLabel
+            Left = 8
+            Height = 21
+            Top = 352
+            Width = 30
+            Caption = 'Plan'
+          end
+          object MemoPlan: TMemo
+            Left = 88
+            Height = 85
+            Top = 320
+            Width = 401
+            Lines.Strings = (
+              'Memo1'
+            )
+            ScrollBars = ssAutoBoth
+            TabOrder = 7
+          end
+          object Label12: TLabel
+            Left = 8
+            Height = 21
+            Top = 448
+            Width = 52
+            Caption = 'Intruksi'
+          end
+          object MemoIntruksi: TMemo
+            Left = 88
+            Height = 83
+            Top = 416
+            Width = 401
+            Lines.Strings = (
+              'Memo1'
+            )
+            ScrollBars = ssAutoBoth
+            TabOrder = 8
+          end
+          object Label13: TLabel
+            Left = 8
+            Height = 21
+            Top = 520
+            Width = 56
+            Caption = 'Evaluasi'
+          end
+          object MemoEvaluasi: TMemo
+            Left = 88
+            Height = 59
+            Top = 504
+            Width = 401
+            Lines.Strings = (
+              'Memo1'
+            )
+            ScrollBars = ssAutoBoth
+            TabOrder = 9
+          end
+          object Label14: TLabel
+            Left = 496
+            Height = 21
+            Top = 22
+            Width = 60
+            Caption = 'Suhu (C)'
+          end
+          object EditSuhu: TEdit
+            Left = 600
+            Height = 29
+            Top = 14
+            Width = 80
+            TabOrder = 10
+            Text = 'EditSuhu'
+          end
+          object Label15: TLabel
+            Left = 496
+            Height = 21
+            Top = 56
+            Width = 96
+            Caption = 'Tensi (mmHg)'
+          end
+          object EditTensi: TEdit
+            Left = 600
+            Height = 29
+            Top = 48
+            Width = 80
+            TabOrder = 11
+            Text = 'EditTensi'
+          end
+          object Label16: TLabel
+            Left = 496
+            Height = 21
+            Top = 96
+            Width = 68
+            Caption = 'Berat (Kg)'
+          end
+          object EditBerat: TEdit
+            Left = 600
+            Height = 29
+            Top = 88
+            Width = 80
+            TabOrder = 12
+            Text = 'EditBerat'
+          end
+          object Label17: TLabel
+            Left = 496
+            Height = 21
+            Top = 136
+            Width = 55
+            Caption = 'TB (Cm)'
+          end
+          object EditTb: TEdit
+            Left = 600
+            Height = 29
+            Top = 128
+            Width = 80
+            TabOrder = 13
+            Text = 'EditTb'
+          end
+          object Label18: TLabel
+            Left = 496
+            Height = 21
+            Top = 176
+            Width = 80
+            Caption = 'RR (/Menit)'
+          end
+          object EditRR: TEdit
+            Left = 600
+            Height = 29
+            Top = 168
+            Width = 80
+            TabOrder = 14
+            Text = 'EditRR'
+          end
+          object Label19: TLabel
+            Left = 496
+            Height = 21
+            Top = 216
+            Width = 93
+            Caption = 'Nadi (/Menit)'
+          end
+          object EditNadi: TEdit
+            Left = 600
+            Height = 29
+            Top = 208
+            Width = 80
+            TabOrder = 15
+            Text = 'EditNadi'
+          end
+          object Label20: TLabel
+            Left = 496
+            Height = 21
+            Top = 256
+            Width = 66
+            Caption = 'SpO2 (%)'
+          end
+          object EditSp: TEdit
+            Left = 600
+            Height = 29
+            Top = 248
+            Width = 80
+            TabOrder = 16
+            Text = 'EditSp'
+          end
+          object Label21: TLabel
+            Left = 496
+            Height = 21
+            Top = 296
+            Width = 82
+            Caption = 'GCS (E,V,M)'
+          end
+          object EditGcs: TEdit
+            Left = 498
+            Height = 29
+            Top = 320
+            Width = 182
+            TabOrder = 17
+            Text = 'EditGcs'
+          end
+          object Label22: TLabel
+            Left = 496
+            Height = 21
+            Top = 352
+            Width = 72
+            Caption = 'Kesadaran'
+          end
+          object ComboBoxKesadaran: TComboBox
+            Left = 496
+            Height = 29
+            Top = 376
+            Width = 188
+            ItemHeight = 21
+            TabOrder = 18
+            Text = 'ComboBoxKesadaran'
+          end
         end
-        object BCPanel1: TBCPanel
-          Left = 498
-          Height = 576
+        object BCPanelPemeriksaanKiri: TBCPanel
+          Left = 696
+          Height = 574
           Top = 0
-          Width = 576
+          Width = 496
           Align = alClient
           Background.Color = clBtnFace
           Background.Gradient1.StartColor = clWhite
@@ -173,7 +502,6 @@ object FormPemeriksaan: TFormPemeriksaan
           BevelOuter = bvRaised
           BevelWidth = 1
           Border.Style = bboNone
-          Caption = 'BCPanel1'
           FontEx.Color = clDefault
           FontEx.FontQuality = fqSystemClearType
           FontEx.Shadow = False
@@ -185,6 +513,521 @@ object FormPemeriksaan: TFormPemeriksaan
           Rounding.RoundX = 1
           Rounding.RoundY = 1
           TabOrder = 1
+          object DBGridPemeriksaan: TDBGrid
+            Left = 1
+            Height = 530
+            Top = 43
+            Width = 494
+            Align = alClient
+            Color = clWindow
+            Columns = <            
+              item
+                Title.Caption = 'NO Rawat'
+                FieldName = 'no_rawat'
+              end            
+              item
+                Title.Caption = 'Tgl Perawatan'
+                FieldName = 'tgl_perawatan'
+              end            
+              item
+                Title.Caption = 'Jam Rawat'
+                FieldName = 'jam_rawat'
+              end            
+              item
+                Title.Caption = 'keluhan'
+                Width = 250
+                FieldName = 'keluhan'
+              end            
+              item
+                Title.Caption = 'Suhu'
+                Width = 50
+                FieldName = 'suhu_tubuh'
+              end            
+              item
+                Title.Caption = 'Tensi'
+                Width = 50
+                FieldName = 'tensi'
+              end            
+              item
+                Title.Caption = 'Berat'
+                Width = 50
+                FieldName = 'berat'
+              end            
+              item
+                Title.Caption = 'tinggi'
+                Width = 50
+                FieldName = 'tinggi'
+              end            
+              item
+                Title.Caption = 'respirasi'
+                Width = 50
+                FieldName = 'respirasi'
+              end            
+              item
+                Title.Caption = 'nadi'
+                Width = 50
+                FieldName = 'nadi'
+              end            
+              item
+                Title.Caption = 'spo2'
+                FieldName = 'spo2'
+              end            
+              item
+                Title.Caption = 'gcs'
+                FieldName = 'gcs'
+              end            
+              item
+                Title.Caption = 'kesadaran'
+                FieldName = 'kesadaran'
+              end            
+              item
+                Title.Caption = 'Evaluasi'
+                Width = 200
+                FieldName = 'evaluasi'
+              end            
+              item
+                Title.Caption = 'Instruksi'
+                Width = 200
+                FieldName = 'instruksi'
+              end            
+              item
+                Title.Caption = 'Alergi'
+                Width = 200
+                FieldName = 'alergi'
+              end            
+              item
+                Title.Caption = 'Pemeriksaan'
+                Width = 200
+                FieldName = 'pemeriksaan'
+              end            
+              item
+                Title.Caption = 'Penilaian'
+                Width = 200
+                FieldName = 'penilaian'
+              end            
+              item
+                Title.Caption = 'RTL'
+                Width = 200
+                FieldName = 'rtl'
+              end            
+              item
+                Title.Caption = 'nip'
+                FieldName = 'nip'
+              end            
+              item
+                Title.Caption = 'nama'
+                FieldName = 'nama'
+              end>
+            DataSource = DmKoneksi.DataSourcePemeriksaanRanap
+            DefaultRowHeight = 40
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisplayMemoText]
+            TabOrder = 0
+            OnCellClick = DBGridPemeriksaanCellClick
+          end
+          object BCPanelPemeriksaanAtas: TBCPanel
+            Left = 1
+            Height = 42
+            Top = 1
+            Width = 494
+            Align = alTop
+            Background.Color = clBtnFace
+            Background.Gradient1.StartColor = clWhite
+            Background.Gradient1.EndColor = clBlack
+            Background.Gradient1.GradientType = gtLinear
+            Background.Gradient1.Point1XPercent = 0
+            Background.Gradient1.Point1YPercent = 0
+            Background.Gradient1.Point2XPercent = 0
+            Background.Gradient1.Point2YPercent = 100
+            Background.Gradient2.StartColor = clWhite
+            Background.Gradient2.EndColor = clBlack
+            Background.Gradient2.GradientType = gtLinear
+            Background.Gradient2.Point1XPercent = 0
+            Background.Gradient2.Point1YPercent = 0
+            Background.Gradient2.Point2XPercent = 0
+            Background.Gradient2.Point2YPercent = 100
+            Background.Gradient1EndPercent = 35
+            Background.Style = bbsColor
+            BevelInner = bvNone
+            BevelOuter = bvRaised
+            BevelWidth = 1
+            Border.Style = bboNone
+            FontEx.Color = clDefault
+            FontEx.FontQuality = fqSystemClearType
+            FontEx.Shadow = False
+            FontEx.ShadowRadius = 5
+            FontEx.ShadowOffsetX = 5
+            FontEx.ShadowOffsetY = 5
+            FontEx.Style = []
+            ParentBackground = False
+            Rounding.RoundX = 1
+            Rounding.RoundY = 1
+            TabOrder = 1
+            object BCButtonPemeriksaanTambah: TBCButton
+              Left = 1
+              Height = 40
+              Top = 1
+              Width = 63
+              Align = alLeft
+              StateClicked.Background.Gradient1.StartColor = 8404992
+              StateClicked.Background.Gradient1.EndColor = 4194304
+              StateClicked.Background.Gradient1.GradientType = gtRadial
+              StateClicked.Background.Gradient1.Point1XPercent = 50
+              StateClicked.Background.Gradient1.Point1YPercent = 100
+              StateClicked.Background.Gradient1.Point2XPercent = 0
+              StateClicked.Background.Gradient1.Point2YPercent = 0
+              StateClicked.Background.Gradient2.StartColor = clWhite
+              StateClicked.Background.Gradient2.EndColor = clBlack
+              StateClicked.Background.Gradient2.GradientType = gtLinear
+              StateClicked.Background.Gradient2.Point1XPercent = 0
+              StateClicked.Background.Gradient2.Point1YPercent = 0
+              StateClicked.Background.Gradient2.Point2XPercent = 0
+              StateClicked.Background.Gradient2.Point2YPercent = 100
+              StateClicked.Background.Gradient1EndPercent = 100
+              StateClicked.Background.Style = bbsGradient
+              StateClicked.Border.Style = bboNone
+              StateClicked.FontEx.Color = 16770790
+              StateClicked.FontEx.FontQuality = fqSystemClearType
+              StateClicked.FontEx.Shadow = True
+              StateClicked.FontEx.ShadowRadius = 2
+              StateClicked.FontEx.ShadowOffsetX = 1
+              StateClicked.FontEx.ShadowOffsetY = 1
+              StateClicked.FontEx.Style = [fsBold]
+              StateHover.Background.Gradient1.StartColor = 16744448
+              StateHover.Background.Gradient1.EndColor = 8404992
+              StateHover.Background.Gradient1.GradientType = gtRadial
+              StateHover.Background.Gradient1.Point1XPercent = 50
+              StateHover.Background.Gradient1.Point1YPercent = 100
+              StateHover.Background.Gradient1.Point2XPercent = 0
+              StateHover.Background.Gradient1.Point2YPercent = 0
+              StateHover.Background.Gradient2.StartColor = clWhite
+              StateHover.Background.Gradient2.EndColor = clBlack
+              StateHover.Background.Gradient2.GradientType = gtLinear
+              StateHover.Background.Gradient2.Point1XPercent = 0
+              StateHover.Background.Gradient2.Point1YPercent = 0
+              StateHover.Background.Gradient2.Point2XPercent = 0
+              StateHover.Background.Gradient2.Point2YPercent = 100
+              StateHover.Background.Gradient1EndPercent = 100
+              StateHover.Background.Style = bbsGradient
+              StateHover.Border.Style = bboNone
+              StateHover.FontEx.Color = clWhite
+              StateHover.FontEx.FontQuality = fqSystemClearType
+              StateHover.FontEx.Shadow = True
+              StateHover.FontEx.ShadowRadius = 2
+              StateHover.FontEx.ShadowOffsetX = 1
+              StateHover.FontEx.ShadowOffsetY = 1
+              StateHover.FontEx.Style = [fsBold]
+              StateNormal.Background.Gradient1.StartColor = 4194304
+              StateNormal.Background.Gradient1.EndColor = 8405056
+              StateNormal.Background.Gradient1.GradientType = gtLinear
+              StateNormal.Background.Gradient1.Point1XPercent = 0
+              StateNormal.Background.Gradient1.Point1YPercent = 0
+              StateNormal.Background.Gradient1.Point2XPercent = 0
+              StateNormal.Background.Gradient1.Point2YPercent = 100
+              StateNormal.Background.Gradient2.StartColor = 8405056
+              StateNormal.Background.Gradient2.EndColor = 4194304
+              StateNormal.Background.Gradient2.GradientType = gtRadial
+              StateNormal.Background.Gradient2.Point1XPercent = 50
+              StateNormal.Background.Gradient2.Point1YPercent = 100
+              StateNormal.Background.Gradient2.Point2XPercent = 0
+              StateNormal.Background.Gradient2.Point2YPercent = 0
+              StateNormal.Background.Gradient1EndPercent = 60
+              StateNormal.Background.Style = bbsGradient
+              StateNormal.Border.Style = bboNone
+              StateNormal.FontEx.Color = 16770790
+              StateNormal.FontEx.FontQuality = fqSystemClearType
+              StateNormal.FontEx.Shadow = True
+              StateNormal.FontEx.ShadowRadius = 2
+              StateNormal.FontEx.ShadowOffsetX = 1
+              StateNormal.FontEx.ShadowOffsetY = 1
+              StateNormal.FontEx.Style = [fsBold]
+              Caption = 'Tambah'
+              Color = clNone
+              DropDownWidth = 16
+              DropDownArrowSize = 8
+              GlobalOpacity = 255
+              OnClick = BCButtonPemeriksaanTambahClick
+              ParentColor = False
+              Rounding.RoundX = 12
+              Rounding.RoundY = 12
+              RoundingDropDown.RoundX = 1
+              RoundingDropDown.RoundY = 1
+              TextApplyGlobalOpacity = False
+              MemoryUsage = bmuHigh
+            end
+            object BCButtonPemeriksaanUbah: TBCButton
+              Left = 64
+              Height = 40
+              Top = 1
+              Width = 63
+              Align = alLeft
+              StateClicked.Background.Gradient1.StartColor = 8404992
+              StateClicked.Background.Gradient1.EndColor = 4194304
+              StateClicked.Background.Gradient1.GradientType = gtRadial
+              StateClicked.Background.Gradient1.Point1XPercent = 50
+              StateClicked.Background.Gradient1.Point1YPercent = 100
+              StateClicked.Background.Gradient1.Point2XPercent = 0
+              StateClicked.Background.Gradient1.Point2YPercent = 0
+              StateClicked.Background.Gradient2.StartColor = clWhite
+              StateClicked.Background.Gradient2.EndColor = clBlack
+              StateClicked.Background.Gradient2.GradientType = gtLinear
+              StateClicked.Background.Gradient2.Point1XPercent = 0
+              StateClicked.Background.Gradient2.Point1YPercent = 0
+              StateClicked.Background.Gradient2.Point2XPercent = 0
+              StateClicked.Background.Gradient2.Point2YPercent = 100
+              StateClicked.Background.Gradient1EndPercent = 100
+              StateClicked.Background.Style = bbsGradient
+              StateClicked.Border.Style = bboNone
+              StateClicked.FontEx.Color = 16770790
+              StateClicked.FontEx.FontQuality = fqSystemClearType
+              StateClicked.FontEx.Shadow = True
+              StateClicked.FontEx.ShadowRadius = 2
+              StateClicked.FontEx.ShadowOffsetX = 1
+              StateClicked.FontEx.ShadowOffsetY = 1
+              StateClicked.FontEx.Style = [fsBold]
+              StateHover.Background.Gradient1.StartColor = 16744448
+              StateHover.Background.Gradient1.EndColor = 8404992
+              StateHover.Background.Gradient1.GradientType = gtRadial
+              StateHover.Background.Gradient1.Point1XPercent = 50
+              StateHover.Background.Gradient1.Point1YPercent = 100
+              StateHover.Background.Gradient1.Point2XPercent = 0
+              StateHover.Background.Gradient1.Point2YPercent = 0
+              StateHover.Background.Gradient2.StartColor = clWhite
+              StateHover.Background.Gradient2.EndColor = clBlack
+              StateHover.Background.Gradient2.GradientType = gtLinear
+              StateHover.Background.Gradient2.Point1XPercent = 0
+              StateHover.Background.Gradient2.Point1YPercent = 0
+              StateHover.Background.Gradient2.Point2XPercent = 0
+              StateHover.Background.Gradient2.Point2YPercent = 100
+              StateHover.Background.Gradient1EndPercent = 100
+              StateHover.Background.Style = bbsGradient
+              StateHover.Border.Style = bboNone
+              StateHover.FontEx.Color = clWhite
+              StateHover.FontEx.FontQuality = fqSystemClearType
+              StateHover.FontEx.Shadow = True
+              StateHover.FontEx.ShadowRadius = 2
+              StateHover.FontEx.ShadowOffsetX = 1
+              StateHover.FontEx.ShadowOffsetY = 1
+              StateHover.FontEx.Style = [fsBold]
+              StateNormal.Background.Gradient1.StartColor = 4194304
+              StateNormal.Background.Gradient1.EndColor = 8405056
+              StateNormal.Background.Gradient1.GradientType = gtLinear
+              StateNormal.Background.Gradient1.Point1XPercent = 0
+              StateNormal.Background.Gradient1.Point1YPercent = 0
+              StateNormal.Background.Gradient1.Point2XPercent = 0
+              StateNormal.Background.Gradient1.Point2YPercent = 100
+              StateNormal.Background.Gradient2.StartColor = 8405056
+              StateNormal.Background.Gradient2.EndColor = 4194304
+              StateNormal.Background.Gradient2.GradientType = gtRadial
+              StateNormal.Background.Gradient2.Point1XPercent = 50
+              StateNormal.Background.Gradient2.Point1YPercent = 100
+              StateNormal.Background.Gradient2.Point2XPercent = 0
+              StateNormal.Background.Gradient2.Point2YPercent = 0
+              StateNormal.Background.Gradient1EndPercent = 60
+              StateNormal.Background.Style = bbsGradient
+              StateNormal.Border.Style = bboNone
+              StateNormal.FontEx.Color = 16770790
+              StateNormal.FontEx.FontQuality = fqSystemClearType
+              StateNormal.FontEx.Shadow = True
+              StateNormal.FontEx.ShadowRadius = 2
+              StateNormal.FontEx.ShadowOffsetX = 1
+              StateNormal.FontEx.ShadowOffsetY = 1
+              StateNormal.FontEx.Style = [fsBold]
+              Caption = 'Ubah'
+              Color = clNone
+              DropDownWidth = 16
+              DropDownArrowSize = 8
+              GlobalOpacity = 255
+              ParentColor = False
+              Rounding.RoundX = 12
+              Rounding.RoundY = 12
+              RoundingDropDown.RoundX = 1
+              RoundingDropDown.RoundY = 1
+              TextApplyGlobalOpacity = False
+              MemoryUsage = bmuHigh
+            end
+            object BCButtonPemeriksaanCopy: TBCButton
+              Left = 127
+              Height = 40
+              Top = 1
+              Width = 63
+              Align = alLeft
+              StateClicked.Background.Gradient1.StartColor = 8404992
+              StateClicked.Background.Gradient1.EndColor = 4194304
+              StateClicked.Background.Gradient1.GradientType = gtRadial
+              StateClicked.Background.Gradient1.Point1XPercent = 50
+              StateClicked.Background.Gradient1.Point1YPercent = 100
+              StateClicked.Background.Gradient1.Point2XPercent = 0
+              StateClicked.Background.Gradient1.Point2YPercent = 0
+              StateClicked.Background.Gradient2.StartColor = clWhite
+              StateClicked.Background.Gradient2.EndColor = clBlack
+              StateClicked.Background.Gradient2.GradientType = gtLinear
+              StateClicked.Background.Gradient2.Point1XPercent = 0
+              StateClicked.Background.Gradient2.Point1YPercent = 0
+              StateClicked.Background.Gradient2.Point2XPercent = 0
+              StateClicked.Background.Gradient2.Point2YPercent = 100
+              StateClicked.Background.Gradient1EndPercent = 100
+              StateClicked.Background.Style = bbsGradient
+              StateClicked.Border.Style = bboNone
+              StateClicked.FontEx.Color = 16770790
+              StateClicked.FontEx.FontQuality = fqSystemClearType
+              StateClicked.FontEx.Shadow = True
+              StateClicked.FontEx.ShadowRadius = 2
+              StateClicked.FontEx.ShadowOffsetX = 1
+              StateClicked.FontEx.ShadowOffsetY = 1
+              StateClicked.FontEx.Style = [fsBold]
+              StateHover.Background.Gradient1.StartColor = 16744448
+              StateHover.Background.Gradient1.EndColor = 8404992
+              StateHover.Background.Gradient1.GradientType = gtRadial
+              StateHover.Background.Gradient1.Point1XPercent = 50
+              StateHover.Background.Gradient1.Point1YPercent = 100
+              StateHover.Background.Gradient1.Point2XPercent = 0
+              StateHover.Background.Gradient1.Point2YPercent = 0
+              StateHover.Background.Gradient2.StartColor = clWhite
+              StateHover.Background.Gradient2.EndColor = clBlack
+              StateHover.Background.Gradient2.GradientType = gtLinear
+              StateHover.Background.Gradient2.Point1XPercent = 0
+              StateHover.Background.Gradient2.Point1YPercent = 0
+              StateHover.Background.Gradient2.Point2XPercent = 0
+              StateHover.Background.Gradient2.Point2YPercent = 100
+              StateHover.Background.Gradient1EndPercent = 100
+              StateHover.Background.Style = bbsGradient
+              StateHover.Border.Style = bboNone
+              StateHover.FontEx.Color = clWhite
+              StateHover.FontEx.FontQuality = fqSystemClearType
+              StateHover.FontEx.Shadow = True
+              StateHover.FontEx.ShadowRadius = 2
+              StateHover.FontEx.ShadowOffsetX = 1
+              StateHover.FontEx.ShadowOffsetY = 1
+              StateHover.FontEx.Style = [fsBold]
+              StateNormal.Background.Gradient1.StartColor = 4194304
+              StateNormal.Background.Gradient1.EndColor = 8405056
+              StateNormal.Background.Gradient1.GradientType = gtLinear
+              StateNormal.Background.Gradient1.Point1XPercent = 0
+              StateNormal.Background.Gradient1.Point1YPercent = 0
+              StateNormal.Background.Gradient1.Point2XPercent = 0
+              StateNormal.Background.Gradient1.Point2YPercent = 100
+              StateNormal.Background.Gradient2.StartColor = 8405056
+              StateNormal.Background.Gradient2.EndColor = 4194304
+              StateNormal.Background.Gradient2.GradientType = gtRadial
+              StateNormal.Background.Gradient2.Point1XPercent = 50
+              StateNormal.Background.Gradient2.Point1YPercent = 100
+              StateNormal.Background.Gradient2.Point2XPercent = 0
+              StateNormal.Background.Gradient2.Point2YPercent = 0
+              StateNormal.Background.Gradient1EndPercent = 60
+              StateNormal.Background.Style = bbsGradient
+              StateNormal.Border.Style = bboNone
+              StateNormal.FontEx.Color = 16770790
+              StateNormal.FontEx.FontQuality = fqSystemClearType
+              StateNormal.FontEx.Shadow = True
+              StateNormal.FontEx.ShadowRadius = 2
+              StateNormal.FontEx.ShadowOffsetX = 1
+              StateNormal.FontEx.ShadowOffsetY = 1
+              StateNormal.FontEx.Style = [fsBold]
+              Caption = 'Copy'
+              Color = clNone
+              DropDownWidth = 16
+              DropDownArrowSize = 8
+              GlobalOpacity = 255
+              ParentColor = False
+              Rounding.RoundX = 12
+              Rounding.RoundY = 12
+              RoundingDropDown.RoundX = 1
+              RoundingDropDown.RoundY = 1
+              TextApplyGlobalOpacity = False
+              MemoryUsage = bmuHigh
+            end
+            object BCButtonPemeriksaanHapus: TBCButton
+              Left = 190
+              Height = 40
+              Top = 1
+              Width = 63
+              Align = alLeft
+              StateClicked.Background.Gradient1.StartColor = 8404992
+              StateClicked.Background.Gradient1.EndColor = 4194304
+              StateClicked.Background.Gradient1.GradientType = gtRadial
+              StateClicked.Background.Gradient1.Point1XPercent = 50
+              StateClicked.Background.Gradient1.Point1YPercent = 100
+              StateClicked.Background.Gradient1.Point2XPercent = 0
+              StateClicked.Background.Gradient1.Point2YPercent = 0
+              StateClicked.Background.Gradient2.StartColor = clWhite
+              StateClicked.Background.Gradient2.EndColor = clBlack
+              StateClicked.Background.Gradient2.GradientType = gtLinear
+              StateClicked.Background.Gradient2.Point1XPercent = 0
+              StateClicked.Background.Gradient2.Point1YPercent = 0
+              StateClicked.Background.Gradient2.Point2XPercent = 0
+              StateClicked.Background.Gradient2.Point2YPercent = 100
+              StateClicked.Background.Gradient1EndPercent = 100
+              StateClicked.Background.Style = bbsGradient
+              StateClicked.Border.Style = bboNone
+              StateClicked.FontEx.Color = 16770790
+              StateClicked.FontEx.FontQuality = fqSystemClearType
+              StateClicked.FontEx.Shadow = True
+              StateClicked.FontEx.ShadowRadius = 2
+              StateClicked.FontEx.ShadowOffsetX = 1
+              StateClicked.FontEx.ShadowOffsetY = 1
+              StateClicked.FontEx.Style = [fsBold]
+              StateHover.Background.Gradient1.StartColor = 16744448
+              StateHover.Background.Gradient1.EndColor = 8404992
+              StateHover.Background.Gradient1.GradientType = gtRadial
+              StateHover.Background.Gradient1.Point1XPercent = 50
+              StateHover.Background.Gradient1.Point1YPercent = 100
+              StateHover.Background.Gradient1.Point2XPercent = 0
+              StateHover.Background.Gradient1.Point2YPercent = 0
+              StateHover.Background.Gradient2.StartColor = clWhite
+              StateHover.Background.Gradient2.EndColor = clBlack
+              StateHover.Background.Gradient2.GradientType = gtLinear
+              StateHover.Background.Gradient2.Point1XPercent = 0
+              StateHover.Background.Gradient2.Point1YPercent = 0
+              StateHover.Background.Gradient2.Point2XPercent = 0
+              StateHover.Background.Gradient2.Point2YPercent = 100
+              StateHover.Background.Gradient1EndPercent = 100
+              StateHover.Background.Style = bbsGradient
+              StateHover.Border.Style = bboNone
+              StateHover.FontEx.Color = clWhite
+              StateHover.FontEx.FontQuality = fqSystemClearType
+              StateHover.FontEx.Shadow = True
+              StateHover.FontEx.ShadowRadius = 2
+              StateHover.FontEx.ShadowOffsetX = 1
+              StateHover.FontEx.ShadowOffsetY = 1
+              StateHover.FontEx.Style = [fsBold]
+              StateNormal.Background.Gradient1.StartColor = 4194304
+              StateNormal.Background.Gradient1.EndColor = 8405056
+              StateNormal.Background.Gradient1.GradientType = gtLinear
+              StateNormal.Background.Gradient1.Point1XPercent = 0
+              StateNormal.Background.Gradient1.Point1YPercent = 0
+              StateNormal.Background.Gradient1.Point2XPercent = 0
+              StateNormal.Background.Gradient1.Point2YPercent = 100
+              StateNormal.Background.Gradient2.StartColor = 8405056
+              StateNormal.Background.Gradient2.EndColor = 4194304
+              StateNormal.Background.Gradient2.GradientType = gtRadial
+              StateNormal.Background.Gradient2.Point1XPercent = 50
+              StateNormal.Background.Gradient2.Point1YPercent = 100
+              StateNormal.Background.Gradient2.Point2XPercent = 0
+              StateNormal.Background.Gradient2.Point2YPercent = 0
+              StateNormal.Background.Gradient1EndPercent = 60
+              StateNormal.Background.Style = bbsGradient
+              StateNormal.Border.Style = bboNone
+              StateNormal.FontEx.Color = 16770790
+              StateNormal.FontEx.FontQuality = fqSystemClearType
+              StateNormal.FontEx.Shadow = True
+              StateNormal.FontEx.ShadowRadius = 2
+              StateNormal.FontEx.ShadowOffsetX = 1
+              StateNormal.FontEx.ShadowOffsetY = 1
+              StateNormal.FontEx.Style = [fsBold]
+              Caption = 'Hapus'
+              Color = clNone
+              DropDownWidth = 16
+              DropDownArrowSize = 8
+              GlobalOpacity = 255
+              ParentColor = False
+              Rounding.RoundX = 12
+              Rounding.RoundY = 12
+              RoundingDropDown.RoundX = 1
+              RoundingDropDown.RoundY = 1
+              TextApplyGlobalOpacity = False
+              MemoryUsage = bmuHigh
+            end
+          end
         end
       end
       object TabSheet2: TTabSheet

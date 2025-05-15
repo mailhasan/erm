@@ -3,6 +3,7 @@ object FormDaftarPasienRanap: TFormDaftarPasienRanap
   Height = 691
   Top = 145
   Width = 1185
+  BorderIcons = [biSystemMenu]
   Caption = 'Form Daftar Pasien Ranap'
   ClientHeight = 691
   ClientWidth = 1185

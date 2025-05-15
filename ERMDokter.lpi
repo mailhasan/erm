@@ -11,6 +11,8 @@
       <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True"/>
+        <TextName Value="SIMRS ERM Dokter Simrs Khanza"/>
+        <TextDesc Value="Aplikasi ERM ini terkoneksi dengan database simrs khanza"/>
       </XPManifest>
       <Icon Value="0"/>
     </General>
@@ -89,6 +91,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPemeriksaan"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unittambahpemeriksaan.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FromTambahPemeriksaan"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitTambahPemeriksaan"/>
       </Unit>
     </Units>
   </ProjectOptions>

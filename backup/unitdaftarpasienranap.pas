@@ -156,6 +156,7 @@ begin
 
     EditNoRawat.Text:= noRawat;
     EditNoRm.Text:= noRM;
+    EditNam.Text:= nama;
     EditTgl.Text:= tglDaftar;
     EditJam.Text:= jamDaftar;
     ShowModal;

@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, unitUtama, zcomponent, unitDaftarPasienRanap, unitDm, datetimectrls,
-  unitPemeriksaan, FrameViewer09
+  unitPemeriksaan, FrameViewer09, unitTambahPemeriksaan
   { you can add units after this };
 
 {$R *.res}
@@ -22,9 +22,7 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TFormUtama, FormUtama);
-  Application.CreateForm(TFormDaftarPasienRanap, FormDaftarPasienRanap);
   Application.CreateForm(TDmKoneksi, DmKoneksi);
-  Application.CreateForm(TFormPemeriksaan, FormPemeriksaan);
   Application.Run;
 end.
 
