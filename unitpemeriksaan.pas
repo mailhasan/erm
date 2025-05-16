@@ -145,6 +145,7 @@ end;
 procedure TFormPemeriksaan.BCButtonPemeriksaanTambahClick(Sender: TObject);
 begin
   Application.CreateForm(TFromTambahPemeriksaan, FromTambahPemeriksaan);
+  FromTambahPemeriksaan.baru;
   FromTambahPemeriksaan.ShowModal;
 end;
 

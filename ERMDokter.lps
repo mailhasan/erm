@@ -8,10 +8,9 @@
       <Unit>
         <Filename Value="ERMDokter.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="51" Y="24"/>
-        <UsageCount Value="93"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="105"/>
       </Unit>
       <Unit>
         <Filename Value="unitutama.pas"/>
@@ -20,12 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitUtama"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="20"/>
         <CursorPos X="164" Y="43"/>
-        <UsageCount Value="93"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="105"/>
       </Unit>
       <Unit>
         <Filename Value="unitdm.pas"/>
@@ -34,11 +31,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="unitDm"/>
-        <TopLine Value="9"/>
-        <CursorPos X="81" Y="36"/>
-        <UsageCount Value="93"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="12"/>
+        <UsageCount Value="105"/>
       </Unit>
       <Unit>
         <Filename Value="unitdaftarpasienranap.pas"/>
@@ -47,12 +42,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitDaftarPasienRanap"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="42"/>
-        <CursorPos X="8" Y="163"/>
-        <UsageCount Value="89"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="56" Y="134"/>
+        <UsageCount Value="101"/>
       </Unit>
       <Unit>
         <Filename Value="unitpemeriksaan.pas"/>
@@ -61,12 +54,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitPemeriksaan"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="130"/>
-        <CursorPos X="34" Y="148"/>
-        <UsageCount Value="79"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="174"/>
+        <CursorPos X="21"/>
+        <UsageCount Value="91"/>
       </Unit>
       <Unit>
         <Filename Value="unittambahpemeriksaan.pas"/>
@@ -76,100 +67,36 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitTambahPemeriksaan"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="22"/>
-        <CursorPos X="17" Y="55"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="154"/>
+        <CursorPos X="41" Y="170"/>
+        <UsageCount Value="34"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\components\zeosdbo-7.2.4-stable\src\component\ZAbstractConnection.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="30" Y="91"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\components\zeosdbo-7.2.4-stable\src\plain\ZPlainDriver.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="54"/>
         <CursorPos X="20" Y="71"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit>
       <Unit>
         <Filename Value="unitdm.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="15">
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Column="27"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="24" Column="17"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="36" Column="17" TopLine="2"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="42" Column="17" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="48" Column="17" TopLine="14"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="47" Column="17" TopLine="14"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="55" Column="17" TopLine="22"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="54" Column="17" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="53" Column="17" TopLine="21"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="52" Column="17" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="51" Column="17" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="50" Column="17" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="49" Column="17" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="48" Column="17" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="47" Column="17" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="unittambahpemeriksaan.pas"/>
-        <Caret Line="49" Column="17" TopLine="20"/>
-      </Position>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>

@@ -3,6 +3,7 @@ object FormPemeriksaan: TFormPemeriksaan
   Height = 720
   Top = 96
   Width = 1200
+  BorderIcons = [biSystemMenu]
   Caption = 'Form Pemeriksaan'
   ClientHeight = 720
   ClientWidth = 1200
