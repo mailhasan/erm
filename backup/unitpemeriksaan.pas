@@ -75,7 +75,9 @@ type
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    procedure BCButtonPemeriksaanCopyClick(Sender: TObject);
     procedure BCButtonPemeriksaanTambahClick(Sender: TObject);
+    procedure BCButtonPemeriksaanUbahClick(Sender: TObject);
     procedure BCExpandPanels1ArrangePanels(Sender: TObject);
     procedure DBGridPemeriksaanCellClick(Column: TColumn);
     procedure FormShow(Sender: TObject);
@@ -145,7 +147,120 @@ end;
 procedure TFormPemeriksaan.BCButtonPemeriksaanTambahClick(Sender: TObject);
 begin
   Application.CreateForm(TFromTambahPemeriksaan, FromTambahPemeriksaan);
+  FromTambahPemeriksaan.baru;
   FromTambahPemeriksaan.ShowModal;
+end;
+
+procedure TFormPemeriksaan.BCButtonPemeriksaanCopyClick(Sender: TObject);
+var
+  alergi,berat,evaluasi,gcs,instruksi,jam_rawat,keluhan,kesadaran,nadi,nip,no_rawat,pemeriksaan,penilaian,
+  respirasi,rtl,spo2,suhu_tubuh,tensi,tgl_perawatan,tinggi,nama : string;
+begin
+ Application.CreateForm(TFromTambahPemeriksaan, FromTambahPemeriksaan);
+ with FromTambahPemeriksaan do
+ begin
+  alergi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('alergi').AsString;
+  berat := DBGridPemeriksaan.DataSource.DataSet.FieldByName('berat').AsString;
+  evaluasi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('evaluasi').AsString;
+  gcs := DBGridPemeriksaan.DataSource.DataSet.FieldByName('gcs').AsString;
+  instruksi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('instruksi').AsString;
+  jam_rawat := DBGridPemeriksaan.DataSource.DataSet.FieldByName('jam_rawat').AsString;
+  keluhan := DBGridPemeriksaan.DataSource.DataSet.FieldByName('keluhan').AsString;
+  kesadaran := DBGridPemeriksaan.DataSource.DataSet.FieldByName('kesadaran').AsString;
+  nadi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('nadi').AsString;
+  nip := DBGridPemeriksaan.DataSource.DataSet.FieldByName('nip').AsString;
+  //noRawat := DBGridPemeriksaan.DataSource.DataSet.FieldByName('no_rawat').AsString;
+  pemeriksaan := DBGridPemeriksaan.DataSource.DataSet.FieldByName('pemeriksaan').AsString;
+  penilaian := DBGridPemeriksaan.DataSource.DataSet.FieldByName('penilaian').AsString;
+  respirasi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('respirasi').AsString;
+  rtl := DBGridPemeriksaan.DataSource.DataSet.FieldByName('rtl').AsString;
+  spo2 := DBGridPemeriksaan.DataSource.DataSet.FieldByName('spo2').AsString;
+  suhu_tubuh := DBGridPemeriksaan.DataSource.DataSet.FieldByName('suhu_tubuh').AsString;
+  tensi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('tensi').AsString;
+  tgl_Perawatan := DBGridPemeriksaan.DataSource.DataSet.FieldByName('tgl_perawatan').AsString;
+  tinggi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('tinggi').AsString;
+  nama := DBGridPemeriksaan.DataSource.DataSet.FieldByName('nama').AsString;
+
+  EditAlergi.Text := alergi;
+  EditBerat.Text := berat;
+  MemoEvaluasi.Text := evaluasi;
+  EditGCS.Text := gcs;
+  MemoIntruksi.Text := instruksi;
+  EditJamPemriksaan.Text := jam_rawat;
+  MemoSubjek.Text := keluhan;
+  ComboBoxKesadaran.Text := kesadaran;
+  EditNadi.Text := nadi;
+  //EditNIP.Text := nip;
+  //EditNoRawat.Text := noRawat;
+  MemoObjek.Text := pemeriksaan;
+  MemoAsesmen.Text := penilaian;
+  EditRR.Text := respirasi;
+  MemoPlan.Text := rtl;
+  EditSp.Text := spo2;
+  EditSuhu.Text := suhu_Tubuh;
+  EditTensi.Text := tensi;
+  EditTglPemriksaan.Text := tgl_Perawatan;
+  EditTb.Text := tinggi;
+  EditPelaksana.Text := nama;
+  BCButtonSimpan.Caption:= 'Ubah';
+  ShowModal;
+ end;
+end;
+
+procedure TFormPemeriksaan.BCButtonPemeriksaanUbahClick(Sender: TObject);
+var
+  alergi,berat,evaluasi,gcs,instruksi,jam_rawat,keluhan,kesadaran,nadi,nip,no_rawat,pemeriksaan,penilaian,
+  respirasi,rtl,spo2,suhu_tubuh,tensi,tgl_perawatan,tinggi,nama : string;
+begin
+ Application.CreateForm(TFromTambahPemeriksaan, FromTambahPemeriksaan);
+ with FromTambahPemeriksaan do
+ begin
+  alergi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('alergi').AsString;
+  berat := DBGridPemeriksaan.DataSource.DataSet.FieldByName('berat').AsString;
+  evaluasi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('evaluasi').AsString;
+  gcs := DBGridPemeriksaan.DataSource.DataSet.FieldByName('gcs').AsString;
+  instruksi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('instruksi').AsString;
+  jam_rawat := DBGridPemeriksaan.DataSource.DataSet.FieldByName('jam_rawat').AsString;
+  keluhan := DBGridPemeriksaan.DataSource.DataSet.FieldByName('keluhan').AsString;
+  kesadaran := DBGridPemeriksaan.DataSource.DataSet.FieldByName('kesadaran').AsString;
+  nadi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('nadi').AsString;
+  nip := DBGridPemeriksaan.DataSource.DataSet.FieldByName('nip').AsString;
+  //noRawat := DBGridPemeriksaan.DataSource.DataSet.FieldByName('no_rawat').AsString;
+  pemeriksaan := DBGridPemeriksaan.DataSource.DataSet.FieldByName('pemeriksaan').AsString;
+  penilaian := DBGridPemeriksaan.DataSource.DataSet.FieldByName('penilaian').AsString;
+  respirasi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('respirasi').AsString;
+  rtl := DBGridPemeriksaan.DataSource.DataSet.FieldByName('rtl').AsString;
+  spo2 := DBGridPemeriksaan.DataSource.DataSet.FieldByName('spo2').AsString;
+  suhu_tubuh := DBGridPemeriksaan.DataSource.DataSet.FieldByName('suhu_tubuh').AsString;
+  tensi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('tensi').AsString;
+  tgl_Perawatan := DBGridPemeriksaan.DataSource.DataSet.FieldByName('tgl_perawatan').AsString;
+  tinggi := DBGridPemeriksaan.DataSource.DataSet.FieldByName('tinggi').AsString;
+  nama := DBGridPemeriksaan.DataSource.DataSet.FieldByName('nama').AsString;
+
+  EditAlergi.Text := alergi;
+  EditBerat.Text := berat;
+  MemoEvaluasi.Text := evaluasi;
+  EditGCS.Text := gcs;
+  MemoIntruksi.Text := instruksi;
+  EditJamPemriksaan.Text := jam_rawat;
+  MemoSubjek.Text := keluhan;
+  ComboBoxKesadaran.Text := kesadaran;
+  EditNadi.Text := nadi;
+  //EditNIP.Text := nip;
+  //EditNoRawat.Text := noRawat;
+  MemoObjek.Text := pemeriksaan;
+  MemoAsesmen.Text := penilaian;
+  EditRR.Text := respirasi;
+  MemoPlan.Text := rtl;
+  EditSp.Text := spo2;
+  EditSuhu.Text := suhu_Tubuh;
+  EditTensi.Text := tensi;
+  EditTglPemriksaan.Text := tgl_Perawatan;
+  EditTb.Text := tinggi;
+  EditPelaksana.Text := nama;
+  BCButtonSimpan.Caption:= 'Ubah';
+  ShowModal;
+ end;
 end;
 
 procedure TFormPemeriksaan.DBGridPemeriksaanCellClick(Column: TColumn);

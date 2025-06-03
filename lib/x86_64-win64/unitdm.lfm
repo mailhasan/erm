@@ -1,8 +1,8 @@
 object DmKoneksi: TDmKoneksi
   OldCreateOrder = False
   Height = 478
-  HorizontalOffset = 256
-  VerticalOffset = 145
+  HorizontalOffset = 322
+  VerticalOffset = 149
   Width = 471
   object ZConnectionSik: TZConnection
     ControlsCodePage = cCP_UTF8

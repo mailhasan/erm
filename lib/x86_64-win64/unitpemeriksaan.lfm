@@ -838,6 +838,7 @@ object FormPemeriksaan: TFormPemeriksaan
               DropDownWidth = 16
               DropDownArrowSize = 8
               GlobalOpacity = 255
+              OnClick = BCButtonPemeriksaanUbahClick
               ParentColor = False
               Rounding.RoundX = 12
               Rounding.RoundY = 12
@@ -929,6 +930,7 @@ object FormPemeriksaan: TFormPemeriksaan
               DropDownWidth = 16
               DropDownArrowSize = 8
               GlobalOpacity = 255
+              OnClick = BCButtonPemeriksaanCopyClick
               ParentColor = False
               Rounding.RoundX = 12
               Rounding.RoundY = 12

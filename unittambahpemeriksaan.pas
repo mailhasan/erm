@@ -101,7 +101,12 @@ begin
 end;
 
 procedure TFromTambahPemeriksaan.BCButtonSimpanClick(Sender: TObject);
+var
+  IsEditMode: Boolean;
 begin
+  // Tentukan mode berdasarkan caption tombol
+  IsEditMode := (LowerCase(Trim(BCButtonSimpan.Caption)) = 'update');
+
   // Validasi: Pastikan semua Memo wajib diisi
   if Trim(MemoIntruksi.Text) = '' then
   begin
@@ -112,46 +117,61 @@ begin
 
   if Trim(MemoSubjek.Text) = '' then
   begin
-    ShowMessage('Keluhan tidak boleh kosong.');
+    ShowMessage('Keluhan (Subjektif) tidak boleh kosong.');
     MemoSubjek.SetFocus;
     Exit;
   end;
 
-  if Trim(MemoSubjek.Text) = '' then
+  if Trim(MemoObjek.Text) = '' then
   begin
-    ShowMessage('Pemeriksaan tidak boleh kosong.');
-    MemoSubjek.SetFocus;
+    ShowMessage('Pemeriksaan (Objektif) tidak boleh kosong.');
+    MemoObjek.SetFocus;
     Exit;
   end;
 
   if Trim(MemoAsesmen.Text) = '' then
   begin
-    ShowMessage('Penilaian tidak boleh kosong.');
+    ShowMessage('Penilaian (Asesmen) tidak boleh kosong.');
     MemoAsesmen.SetFocus;
     Exit;
   end;
 
   if Trim(MemoPlan.Text) = '' then
   begin
-    ShowMessage('RTL (Rencana Tindak Lanjut) tidak boleh kosong.');
+    ShowMessage('Rencana Tindak Lanjut (Plan) tidak boleh kosong.');
     MemoPlan.SetFocus;
     Exit;
   end;
 
-  // Proses insert setelah lolos validasi
+  // Proses simpan/update
   with DmKoneksi.ZQueryPemeriksaanRanap do
   begin
     Close;
     SQL.Clear;
-    SQL.Text :=
-      'INSERT INTO pemeriksaan_ranap (' +
-      'alergi, berat, evaluasi, gcs, instruksi, jam_rawat, keluhan, kesadaran, ' +
-      'nadi, nip, no_rawat, pemeriksaan, penilaian, respirasi, rtl, spo2, ' +
-      'suhu_tubuh, tensi, tgl_perawatan, tinggi) ' +
-      'VALUES (:alergi, :berat, :evaluasi, :gcs, :instruksi, :jam_rawat, :keluhan, :kesadaran, ' +
-      ':nadi, :nip, :no_rawat, :pemeriksaan, :penilaian, :respirasi, :rtl, :spo2, ' +
-      ':suhu_tubuh, :tensi, :tgl_perawatan, :tinggi)';
 
+    if IsEditMode then
+    begin
+      SQL.Text :=
+        'UPDATE pemeriksaan_ranap SET ' +
+        'alergi = :alergi, berat = :berat, evaluasi = :evaluasi, gcs = :gcs, instruksi = :instruksi, ' +
+        'jam_rawat = :jam_rawat, keluhan = :keluhan, kesadaran = :kesadaran, nadi = :nadi, ' +
+        'nip = :nip, pemeriksaan = :pemeriksaan, penilaian = :penilaian, respirasi = :respirasi, ' +
+        'rtl = :rtl, spo2 = :spo2, suhu_tubuh = :suhu_tubuh, tensi = :tensi, tinggi = :tinggi ' +
+        'WHERE no_rawat = :no_rawat AND tgl_perawatan = :tgl_perawatan';
+    end
+    else
+    begin
+      SQL.Text :=
+        'INSERT INTO pemeriksaan_ranap (' +
+        'alergi, berat, evaluasi, gcs, instruksi, jam_rawat, keluhan, kesadaran, ' +
+        'nadi, nip, no_rawat, pemeriksaan, penilaian, respirasi, rtl, spo2, ' +
+        'suhu_tubuh, tensi, tgl_perawatan, tinggi) ' +
+        'VALUES (:alergi, :berat, :evaluasi, :gcs, :instruksi, :jam_rawat, :keluhan, :kesadaran, ' +
+        ':nadi, :nip, :no_rawat, :pemeriksaan, :penilaian, :respirasi, :rtl, :spo2, ' +
+        ':suhu_tubuh, :tensi, :tgl_perawatan, :tinggi)';
+    end;
+
+    // Isi parameter
     ParamByName('alergi').AsString        := Trim(EditAlergi.Text);
     ParamByName('berat').AsFloat          := StrToFloatDef(EditBerat.Text, 0);
     ParamByName('evaluasi').AsString      := MemoEvaluasi.Text;
@@ -161,7 +181,7 @@ begin
     ParamByName('keluhan').AsString       := MemoSubjek.Text;
     ParamByName('kesadaran').AsString     := ComboBoxKesadaran.Text;
     ParamByName('nadi').AsInteger         := StrToIntDef(EditNadi.Text, 0);
-    ParamByName('nip').AsString           := '';//EditNIP.Text;
+    ParamByName('nip').AsString           := ''; // Sesuaikan
     ParamByName('no_rawat').AsString      := FormPemeriksaan.EditNoRawat.Text;
     ParamByName('pemeriksaan').AsString   := MemoObjek.Text;
     ParamByName('penilaian').AsString     := MemoAsesmen.Text;
@@ -170,12 +190,15 @@ begin
     ParamByName('spo2').AsInteger         := StrToIntDef(EditSp.Text, 0);
     ParamByName('suhu_tubuh').AsFloat     := StrToFloatDef(EditSuhu.Text, 0);
     ParamByName('tensi').AsString         := EditTensi.Text;
-    ParamByName('tgl_perawatan').AsDate   := DateTimePicker1.Date; //DateTimePickerTgl.Date;
+    ParamByName('tgl_perawatan').AsDate   := DateTimePicker1.Date;
     ParamByName('tinggi').AsFloat         := StrToFloatDef(EditTb.Text, 0);
 
     try
       ExecSQL;
-      ShowMessage('Data berhasil disimpan.');
+      if IsEditMode then
+        ShowMessage('Data berhasil diperbarui.')
+      else
+        ShowMessage('Data berhasil disimpan.');
     except
       on E: Exception do
         ShowMessage('Gagal menyimpan data: ' + E.Message);

@@ -67,6 +67,7 @@ object DmKoneksi: TDmKoneksi
   end
   object ZQueryPemeriksaanRanap: TZQuery
     Connection = ZConnectionSik
+    Active = True
     SQL.Strings = (
       'SELECT'
       '    `pemeriksaan_ranap`.`alergi`'
@@ -91,8 +92,8 @@ object DmKoneksi: TDmKoneksi
       '    , `pemeriksaan_ranap`.`tinggi`'
       '    , `pegawai`.`nama`'
       'FROM'
-      '    `sikDrSalim1`.`pemeriksaan_ranap`'
-      '    INNER JOIN `sikDrSalim1`.`pegawai` '
+      '   `pemeriksaan_ranap`'
+      '    INNER JOIN `pegawai` '
       '        ON (`pemeriksaan_ranap`.`nip` = `pegawai`.`nik`)'
     )
     Params = <>

@@ -210,7 +210,7 @@ object FromTambahPemeriksaan: TFromTambahPemeriksaan
       Left = 216
       Height = 25
       Top = 12
-      Width = 91
+      Width = 71
       CenturyFrom = 1941
       MaxDate = 2958465
       MinDate = -53780
@@ -218,7 +218,7 @@ object FromTambahPemeriksaan: TFromTambahPemeriksaan
       TrailingSeparator = False
       TextForNullDate = 'NULL'
       LeadingZeros = True
-      Kind = dtkDate
+      Kind = dtkTime
       TimeFormat = tf24
       TimeDisplay = tdHMS
       DateMode = dmComboBox

@@ -1,7 +1,7 @@
 object FormDaftarPasienRanap: TFormDaftarPasienRanap
-  Left = 256
+  Left = 339
   Height = 691
-  Top = 145
+  Top = 148
   Width = 1185
   Caption = 'Form Daftar Pasien Ranap'
   ClientHeight = 691
